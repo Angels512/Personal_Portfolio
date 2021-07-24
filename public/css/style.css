@@ -10,16 +10,16 @@ Variables
 ----------------- */
 :root
 {
-    --main-color: #e02f6b;
-    --blue: #0000ff;
-    --blue-dark: #18293c;
-    --orange: #ffa500;
-    --green-yellow: #cddc39;
-    --pink-light: #efa2b4;
-    --cyan-light: #aef1ee;
+    --main-color: #b10802;
+    --blue: #114491;
+    --blue-dark: #fff;
+    --orange: #597f88;
+    --green-yellow: #200909;
+    --pink-light: #424242;
+    --cyan-light: #313236;
     --white: #ffffff;
-    --white-alpha-40: rgba(255, 255, 255, .40);
-    --white-alpha-25: rgba(255, 255, 255, .25);
+    --white-alpha-40: rgba(0, 0, 0, 0.4);
+    --white-alpha-25: rgba(0, 0, 0, 0.25);
     --backdrop-fitler-blur: blur(5px);
 }
 
