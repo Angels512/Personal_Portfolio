@@ -138,19 +138,30 @@ function init()
 function createContact(e)
 {
     e.preventDefault();
-    let formData = new FormData($('#contactForm')[0]);
 
-    swal("Angel's Corporation", "Se ha enviado correctamente!", "success");
-    $('#contactForm')[0].reset();
+    let nombre = $('#cont_name').val();
+    let email = $('#cont_email').val();
+    let asunto = $('#cont_subject').val();
+    let mensaje = $('#cont_message').val();
 
-    $.ajax({
-        url: 'controller/contact.php?op=createContact',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: (data) => {}
-    });
+    if (nombre == '' || email == '' || asunto == '' || mensaje == '')
+    {
+        swal("Angel's Corporation", "Por favor, complete todos los campos", "error");
+    }else {
+        let formData = new FormData($('#contactForm')[0]);
+
+        swal("Angel's Corporation", "Se ha enviado correctamente!", "success");
+        $('#contactForm')[0].reset();
+
+        $.ajax({
+            url: 'controller/contact.php?op=createContact',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: (data) => {}
+        });
+    }
 }
 
 init();
