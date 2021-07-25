@@ -121,3 +121,36 @@ document.addEventListener('click', (e) =>
         tooglePortfolioPopup();
     }
 });
+
+
+
+
+
+/* ------------ CONTACT ------------ */
+function init()
+{
+    $('#contactForm').on('submit', (e) =>
+    {
+        createContact(e);
+    });
+}
+
+function createContact(e)
+{
+    e.preventDefault();
+    let formData = new FormData($('#contactForm')[0]);
+
+    swal("Angel's Corporation", "Se ha enviado correctamente!", "success");
+    $('#contactForm')[0].reset();
+
+    $.ajax({
+        url: 'controller/contact.php?op=createContact',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: (data) => {}
+    });
+}
+
+init();
